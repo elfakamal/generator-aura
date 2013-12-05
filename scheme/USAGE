@@ -1,8 +1,3 @@
 Description:
-  Creates a new aura scheme
+  Creates a new aura scheme, using the scheme.json file that contains scheme components
 
-Example:
-  yo aura:scheme 
-
-  This will create:
-    app/aura_components/name/main.js
