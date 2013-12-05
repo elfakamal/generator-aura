@@ -8,13 +8,6 @@ module.exports = ComponentGenerator;
 
 function ComponentGenerator(args, options, config)
 {
-	console.log("args : " + JSON.stringify(args));
-	console.log("----");
-	console.log("options : " + JSON.stringify(options));
-	console.log("----");
-	console.log("config : " + JSON.stringify(config));
-	console.log("----");
-
 	yeoman.generators.Base.apply(this, arguments);
 	this.sourceRoot(path.join(path.dirname(__dirname), 'templates'));
 	this.argument("name", {type: String, required: false});

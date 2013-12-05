@@ -34,7 +34,11 @@ var SchemeGenerator = module.exports = function SchemeGenerator(args, options, c
 
 	for(var i = 0; i < components.length; i++)
 	{
+		//couldn't do this because yeoman registers hooks in a dictionary "_hooks"
+		//so it don't take many sub-generators with the same name.
+		//
 		//this.hookFor('aura:component', {args: [components[i]]});
+
 		this._createAuraSchemeComponents(components[i]);
 	}
 
@@ -48,7 +52,7 @@ util.inherits(SchemeGenerator, yeoman.generators.NamedBase);
 
 SchemeGenerator.prototype._createAuraSchemeComponents = function (component)
 {
-	console.info(chalk.bold.green('Component ' + component.name));
+	//console.info(chalk.bold.green('Component ' + component.name));
 
 	//component index file
 	this.template('templates/aura_components/main.js', 'app/aura_components/' + component.name + '/main.js');
