@@ -1,0 +1,8 @@
+Description:
+  Creates a new aura scheme
+
+Example:
+  yo aura:scheme 
+
+  This will create:
+    app/aura_components/name/main.js

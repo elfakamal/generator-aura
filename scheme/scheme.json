@@ -1,0 +1,86 @@
+{
+	"name": "scheme-1",
+	"version": 2,
+	"common": {
+		"models": [
+			{
+				"name": "visualization"
+			},
+			{
+				"name": "datasource"
+			}
+		]
+	},
+	"components": [
+		{
+			"name": "entity-form",
+			"type": "Backbone",
+			"templates": [
+				"base-collection",
+				"base-datasource",
+				"base-datastore",
+				"base-visualization",
+				"partial-select-datasources"
+			],
+			"models": [
+				"d3collection",
+				"datastore",
+				"visualization",
+				"datasource"
+			],
+			"views": [
+				{
+					"name": "d3collection",
+					"model": "d3collection",
+					"template": "base-collection"
+				},
+				{
+					"name": "datasource",
+					"model": "datasource",
+					"template": "base-datasource"
+				},
+				{
+					"name": "datastore",
+					"model": "datastore",
+					"template": "base-datastore"
+				},
+				{
+					"name": "visualization",
+					"model": "visualization",
+					"template": "base-visualization"
+				}
+			]
+		},
+		{
+			"name": "collection",
+			"type": "Backbone",
+			"templates": [
+				"base",
+				"D3Collection"
+			],
+			"baseTemplate": "base",
+			"models": [
+				"D3Collection"
+			],
+			"views": [
+				{
+					"name": "D3Collection",
+					"model": "D3Collection",
+					"template": "D3Collection"
+				}
+			],
+			"collections": [
+				{
+					"name": "D3Collections",
+					"model": "D3Collection"
+				}
+			],
+			"aura_listeners": {
+				"collection.refresh": "onCollectionRefresh",
+				"collection.system.get": "onGetSystemCollectionRequested",
+				"collection.library.get": "onGetLibraryCollectionRequested",
+				"collection.regular.get": "onGetRegularCollectionRequested"
+			}
+		}
+	]
+}
