@@ -13,7 +13,7 @@ var SchemeGenerator = module.exports = function SchemeGenerator(args, options, c
 	// By calling `NamedBase` here, we get the argument to the subgenerator call
 	// as `this.name`.
 	yeoman.generators.NamedBase.apply(this, arguments);
-	console.log(this.yeoman);
+//	console.log(this.yeoman);
 	this.sourceRoot(path.dirname(__dirname));
 
 	this.on('end', function()
@@ -29,7 +29,8 @@ SchemeGenerator.prototype.createAuraScheme = function createAuraScheme()
 	//creating the schemes backup folder.
 	this.mkdir("app/aura_schemes/");
 
-	var rawSchemeString = this.readFileAsString(path.join(__dirname, './scheme.json'));
+	var rawSchemeString = this.readFileAsString('app/scheme.json');
+//	var rawSchemeString = this.readFileAsString(path.join(__dirname, './scheme.json'));
 	this.scheme = JSON.parse(rawSchemeString);
 	var currentVersion = +this.scheme.version;
 	var components = this.scheme.components;
@@ -42,7 +43,8 @@ SchemeGenerator.prototype.createAuraScheme = function createAuraScheme()
 		var nextVersion = currentVersion + 1;
 		nextScheme.version = nextVersion;
 		var nextRawSchemeString = JSON.stringify(nextScheme, null, '\t');
-		this.writeFileFromString(nextRawSchemeString, path.join(__dirname, './scheme.json'))
+//		this.writeFileFromString(nextRawSchemeString, path.join(__dirname, './scheme.json'));
+		this.writeFileFromString(nextRawSchemeString, 'app/scheme.json');
 
 		this.mkdir("app/aura_schemes/aura_scheme_" + currentVersion);
 

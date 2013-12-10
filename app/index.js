@@ -101,6 +101,15 @@ AppGenerator.prototype.component = function component() {
   });
 };
 
+AppGenerator.prototype.scheme = function scheme() {
+  this.copy('app/scheme.json', 'app/scheme.json');
+   this.invoke('aura:scheme', {
+    args: []
+  });
+}
+
+
+
 AppGenerator.prototype.hint = function hint() {
   console.info(chalk.yellow(separator));
   console.info(chalk.bold('\nReady.'));
@@ -113,3 +122,4 @@ AppGenerator.prototype.styles = function styles() {
     args: []
   });
 };
+

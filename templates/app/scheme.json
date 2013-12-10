@@ -1,6 +1,6 @@
 {
 	"name": "my-awesome-scheme",
-	"version": 4,
+	"version": 1,
 	"components": [
 		{
 			"name": "awesome-component",
